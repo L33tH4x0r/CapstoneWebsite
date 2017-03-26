@@ -14,16 +14,18 @@
  *= require_self
  */
  @import "bootstrap";
-
- .panel{
-   height: 30vw;
- }
+body{
+  background-color: #213840;
+}
  #picture-panel{
    background-size: cover;
-   height: 30vw;
+   height: 40vw;
    width: 100%;
    margin: 0;
    padding: 0;
    text-align: center;
    font-size: 50px;
  }
+.portfolio-card{
+  height: 20vw;
+}
