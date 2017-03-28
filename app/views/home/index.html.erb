@@ -1,66 +1,21 @@
+<% def mobile_device?
+  if session[:mobile_param]
+    session[:mobile_param] == "1"
+  else
+    request.user_agent =~ /Mobile|webOS/
+  end
+end %>
 <div class="panel">
   <div id="picture-panel" style='background: url("/portraits/title.png") no-repeat top center fixed;'></div>
 </div>
 <div class="panel" style= "color: white; background-color: #428096;">
   <h2 class="text-center">Team</h2>
   <br>
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="color: black;">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      </ol>
-    <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <div class="col-md-4 offset-md-1 card">
-          <h3 class="text-center">Austin Turner</h3>
-          <div class="row">
-            <%= image_tag("/portraits/austin.png", class:"col-md-8 offset-md-2")%>
-          </div>
-          <div class="card portfolio-card">
-            <p style="text-align: justify;" class="col-md-10 offset-md-1">Austin Turner is a Junior at the University of Nevada, Reno and is a web developer for a local startup called Dringo. Austin was the team leader for the project, and was responsible for setting up the project and handled the networking. Once he graduates, he wants to seek a career in Cyber Security.</p>
-          </div>
-        </div>
-        <div class="col-md-4 offset-md-2 card">
-          <h3 class="text-center">Erika Manning</h3>
-          <div class="row">
-            <%= image_tag("/portraits/erika.png", class:"col-md-8 offset-md-2", width: 300, height: 300)%>
-          </div>
-          <div class="card portfolio-card">
-            <p style="text-align: justify;" class="col-md-10 offset-md-1">Erika Manning is a Senior at the University of Nevada, Reno majoring in Computer Science and Engineering. During her time at the university, Erika has founded and held leadership positions in several university student organizations such as the Association for Computing and Machinery, where she currently works on cooperative university and community projects as the Director of Fundraising. Interested in education, Erika spent her Junior summer directing and teaching a core C++ programming class at the university, and hopes to use this experience to assist her in her future involvement in education. Professionally, Erika hopes to build a career in application and web development.</p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="col-md-4 offset-md-1 card">
-          <h3 class="text-center">Mitch Reyes</h3>
-          <div class="row">
-            <%= image_tag("/portraits/mitch.png", class: "col-md-8 offset-md-2", width: 300, height: 300) %>
-          </div>
-          <div class="card portfolio-card">
-            <p style="text-align: justify;" class="col-md-10 offset-md-1">Austin Turner is a Junior at the University of Nevada, Reno and is a web developer for a local startup called Dringo. Austin was the team leader for the project, and was responsible for setting up the project and handled the networking. Once he graduates, he wants to seek a career in Cyber Security.</p>
-          </div>
-        </div>
-        <div class="col-md-4 offset-md-2 card">
-          <h3 class="text-center">Helen Medrano</h3>
-          <div class="row">
-            <%= image_tag("/portraits/helen.png", class:"col-md-8 offset-md-2", width: 300, height: 300)%>
-          </div>
-          <div class="card portfolio-card">
-            <p style="text-align: justify;" class="col-md-10 offset-md-1">Austin Turner is a Junior at the University of Nevada, Reno and is a web developer for a local startup called Dringo. Austin was the team leader for the project and helped to setup the project and handled the networking side. Once he graduates, he wants to seek a career in Cyber Security.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+  <% if mobile_device? %>
+    <%= render "layouts/partials/mobile_team_carosel" %>
+  <% else %>
+    <%= render "layouts/partials/desktop_team_carosel" %>
+  <% end %>
 </div>
 <div class="panel">
 
