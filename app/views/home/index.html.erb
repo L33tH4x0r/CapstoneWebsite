@@ -71,3 +71,19 @@ end %>
     <%= render "layouts/partials/desktop_advisors_carosel" %>
   <% end %>
 </div>
+<div class="panel" style="background-color: #FFFFFF; height: 500px;">
+  <br>
+  <h2 class="text-center">Project Documenation</h2>
+  <br>
+  <div class="card col-md-6 offset-md-3">
+    <br>
+    <%= link_to "Project Proposal", asset_path("documents/Proposal.pdf"), class: "col-md-6 offset-md-4", style: "font-size: 25px;", target: "_blank" %>
+    <br>
+    <%= link_to "Design Document", asset_path("documents/DesignDocument.pdf"), class: "col-md-6 offset-md-4", style: "font-size: 25px;", target: "_blank" %>
+    <br>
+    <%= link_to "Specification", asset_path("documents/SpecificationDocument.pdf"), class: "col-md-6 offset-md-4", style: "font-size: 25px;", target: "_blank" %>
+    <br>
+    <%= link_to "Prototype and Requirements", asset_path("documents/PrototypeandRequirements.pdf"), class: "col-md-6 offset-md-4", style: "font-size: 25px;", target: "_blank" %>
+    <br>
+  </div>
+</div>
