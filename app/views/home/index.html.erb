@@ -25,11 +25,11 @@ end %>
   <br>
   <br>
   <div class="card">
-    <div class="container">
+    <div class="col-md-10 offset-md-1">
       <br>
       <br>
       <h2>Project Description</h2>
-      <p style="text-align: justify;">
+      <p style="text-align: justify; font-size: 14pt;">
         The Curse of the Glitchitaur is a Virtual Reality game that puts the user
         the hear of a Tron-Like maze. This is no ordinary maze, it is guarded by the
         Glitchitaur. The Glitchitaur is a huge, menacing beast that patrols the maze
@@ -51,7 +51,7 @@ end %>
         integration of networking within the program. This allows players to play together within an android VR application. VR appliocations currently on the market only showcase the potential of VR, but don't allow other players to play with eachother. This capability is only seen in the larger, dedicated VR hardware markets such as the Occulus Rift. With the release of this program, we hope to start the movement of the market towards more interconnected applications.
         <br><br>
         With further iterations of this game, we want to add in  eventually add a few more features that will really polish off the game. For example, having voice chat enabled between players would allow the users to better cooperate to get through the game. Also, the inclusion of better AI would make the game more challenging and terrifying at the same time. We would like to update our graphics to add a more polished feeling to the game, as well as add more interesting mechanics to the map such as jumping over obstacles.
-        <br><br> 
+        <br><br>
       </p>
     </div>
     <br>
@@ -59,4 +59,15 @@ end %>
   </div>
   <br>
   <br>
+</div>
+<div class="panel" style= "color: white; background-color: #428096;">
+  <br>
+  <br>
+  <h2 class="text-center">Advisors</h2>
+  <br>
+  <% if mobile_device? %>
+    <%= render "layouts/partials/mobile_advisors_carosel" %>
+  <% else %>
+    <%= render "layouts/partials/desktop_advisors_carosel" %>
+  <% end %>
 </div>
